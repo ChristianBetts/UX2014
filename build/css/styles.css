@@ -54,18 +54,54 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+  *zoom: 1;
+}
+
 html {
   margin: 0;
   padding: 0;
+  color: white;
   font-size: 18px;
   font-family: "promixma-nova", sans-serif;
   width: 100%;
   height: 100%;
-  line-height: 1.6em;
+  text-rendering: optimizeLegibility;
+  background-color: #0484b2;
+}
+
+a {
+  text-decoration: underline;
+  color: white;
 }
 
 section {
-  margin: 2% 0;
+  padding: 2% 0;
 }
 
 .container {
@@ -80,13 +116,84 @@ section {
 h1, h2, h3, h4 {
   font-family: "adelle", serif;
   font-weight: bold;
-  margin: 0 0 0.4em 0;
+  margin-bottom: 5px;
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 3.25em;
+  line-height: 1.21154em;
+  color: #222;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 4px solid #222;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2.8125em;
+  line-height: 1.2em;
+}
+
+h3 {
+  font-size: 1.75em;
+  line-height: 1.28571em;
+  color: #023a4e;
+  margin-top: 1em;
+}
+
+p {
+  font-size: 1.1875em;
+  line-height: 1.42105em;
+  margin-bottom: 0.5em;
+}
+p.intro {
+  font-weight: bold;
+  font-size: 1.375em;
+  line-height: 1.22727em;
+}
+
+span.speaker {
+  font-family: "adelle", serif;
+  font-weight: normal;
+  margin-bottom: 0.25em;
+  display: block;
+}
+
+.promixa {
+  font-family: "promixma-nova", sans-serif;
+}
+
+.adelle {
+  font-family: "adelle", serif;
+  font-weight: bold;
+}
+
+.fleft {
+  float: left;
+}
+
+.fright {
+  float: right;
+}
+
+header {
+  background: #222;
+  color: #6f6f6f;
+  padding: 0.5em 0;
+  font-size: 1.1875em;
+  line-height: 1.42105em;
+  border-bottom: 1px solid #22c1fa;
+}
+
+.speakers .speakers__block {
+  margin-bottom: 60px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #09baf9;
+}
+
+.workshop {
+  background: #ff8400;
+  border-top: 1px solid #ffa94d;
+}
+.workshop .workshop__block h3 {
+  color: #663500;
 }

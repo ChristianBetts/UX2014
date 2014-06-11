@@ -175,15 +175,44 @@ span.speaker {
   float: right;
 }
 
+strong {
+  font-weight: bold;
+}
+
+i {
+  font-style: italic;
+}
+
 header {
-  background: #222;
-  color: #6f6f6f;
+  background: #333;
+  color: #b3b3b3;
   padding: 0.5em 0;
   font-size: 1.1875em;
   line-height: 1.42105em;
-  border-bottom: 1px solid #22c1fa;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  border-bottom: 1px solid #666666;
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
+.hero {
+  height: 20em;
+  background: url("../images/hero.jpg") no-repeat 0 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.speakers {
+  border-top: 1px solid #22c1fa;
+}
+.speakers:first-of-type {
+  margin-top: 2em;
+}
 .speakers .speakers__block {
   margin-bottom: 60px;
   padding-bottom: 30px;

@@ -84,18 +84,32 @@ span.speaker {
 .adelle { font-family: "adelle", serif; font-weight: bold; }
 .fleft { float: left; }
 .fright { float: right; }
+strong { font-weight: bold; }
+i { font-style: italic; }
 
 //Sections
 
 header {
-	background: #222;
-	color: lighten(#222, 30%);
+	background: #333;
+	color: lighten(#333, 50%);
 	padding: 0.5em 0;
 	@include adjust-font-size-to(19px);
-	border-bottom: 1px solid lighten($blue, 20%);
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	border-bottom: 1px solid lighten(#333, 20%);
+	@include box-shadow(0 2px 6px rgba(0,0,0,0.2));
+}
+.hero {
+	height: 20em;
+	background: url("../images/hero.jpg") no-repeat 0 0;
+	@include background-size(cover);
 }
 
 .speakers {
+	border-top: 1px solid lighten($blue, 20%);
+
+	&:first-of-type { margin-top: 2em; }
 
 	.speakers__block { margin-bottom: 60px; padding-bottom: 30px; border-bottom: 1px solid lighten($blue, 15%); }
 }
